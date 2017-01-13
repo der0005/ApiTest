@@ -111,4 +111,5 @@ User:
     "password": "user",
     "clearance": "user"
   }
+  ]
   ```
