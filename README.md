@@ -1,4 +1,6 @@
 ## Information
+This project is a test.
+
 The API is based on RESTFul using Jersey framework.
 
 A simple database is used for test purposes which limits the number of users. 
