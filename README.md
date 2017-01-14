@@ -1,16 +1,16 @@
 ## Information
-This project is a test.
+This is a test project that involves creating an API that handles hiking trails.
 
-The API is based on RESTFul using Jersey framework.
+The API is based on RESTFul using the Jersey framework.
 
 A simple database is used for test purposes which limits the number of users. 
 The database is not thread safe. 
 
-When the server is initiated data are included in the database.
-RouteService.java (route test data)
-UserService.java (user test data)
+When the server is initiated, user information is included in the database.
+* RouteService.java (route test data)
+* UserService.java (user test data)
 
-Below is the preset user information.
+Below are the preset user information.
 
 |user| username  | password  | clearance  |
 |---|---|---|---|
@@ -34,16 +34,25 @@ Below is the preset user information.
 |PUT 			|/api/user/{id}/{username}/{password}		|Update user with id == 3*|
 |DELETE 			|/api/user/{id}/{username}/{password}		|Delete user with id == 3*|
 
-*a username and password with clearance "admin" 
-needs to added.
+*username and password, with admin clearance.
 	
 ## Data types
-The API sends and receives Json objects according to the structure bellow.  
-The exception is the GET method used to get "all routes". This method returns 
-a list of Json objects with the two lists, “places” and “listPoss” removed.
-Also the GET methood that checks if the users has "admin" clearance, returns 
-a String (true/false).
+The data type is Json according to the structure bellow. 
+The exception is the GET method that checks if the user has "admin" clearance. It returns 
+a String ("true"/"false").
 
+Route (basic information):
+```json
+[
+	{
+	  "id": 1,
+	  "name": "Skogstur2",
+	  "info": "fin tur",
+	  "length": "10.8 km",
+	  "duration": "2.4 timmar"
+	}
+]
+```
 Route:
 ```json
 {
