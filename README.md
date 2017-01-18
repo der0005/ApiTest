@@ -26,28 +26,28 @@ Below are the preset user information.
 ## Install and run the project
 I included a apitest.war file, that includes the Jersey library (JAX-RS). This can be deployed on any Java EE web container.
 
-### On local Tomcat server
+#### On local Tomcat server
 1. Add the apitest.war file to the “tomcat/webapps” folder. 
 2. Start server by running startup.bat, located in tomcat/bin.
 
 When the server starts, the folders are created under “tomcat/webapps/apitest”. If the server is local, the API can be reached by “http://localhost:8080/testapi/”. Please check the “Connector port =8080” in “Tomcat\conf\server.xml”.
 
-#### If no deployment are initiated.
+##### If no deployment are initiated.
 * Log onto the server http://localhost:8080 and deploy manually. Check for username and password in “Tomcat\conf\tomcat-users.xml”
 * Make sure the Tomcat folder has read and write privileges.
 
-#### If server dont start
+##### If server dont start
 * Make sure the environment variable CATALINA_HOME exists, that contains the pathname to the directory in which Tomcat has been installed.
 * Make sure the environment variable CLASSPATH exists, that contains the pathname to jsp-api.jar, located in the tomcat/lib.
 
-### Important remark
+#### In Eclipse:
+Import the “apitest.war” file. Deploy the API to an installed local server.
+
+#### Important remark
 
 The “TestWebpage” that was created to interact with this API, can’t do requests if Tomcat (with apitest) is used on the same computer (the same-origin policy). To test the API, the Postman Chrome App can be used. 
 
 https://www.getpostman.com/docs/introduction
-
-### In Eclipse:
-Import the “apitest.war” file. Deploy the API to an installed local server.
 
 ## Interaction with the API
 The webpage in the repositories WebPageTest, can be used to interact with this API.
