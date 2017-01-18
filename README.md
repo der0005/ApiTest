@@ -30,32 +30,31 @@ I included a apitest.war file, that includes the Jersey library (JAX-RS). This c
 1. Add the apitest.war file to the “tomcat/webapps” folder. 
 2. Start server by running startup.bat, located in tomcat/bin.
 
-When the server starts, the correct folders are created under “tomcat/webapps/apitest”. If the server is local, the API can be reached by “http://localhost:8080/TestApi/”. Please check the “Connector port =8080” in “Tomcat\conf\server.xml”.
+When the server starts, the folders are created under “tomcat/webapps/apitest”. If the server is local, the API can be reached by “http://localhost:8080/testapi/”. Please check the “Connector port =8080” in “Tomcat\conf\server.xml”.
 
 #### If no deployment are initiated.
 * Log onto the server http://localhost:8080 and deploy manually. Check for username and password in “Tomcat\conf\tomcat-users.xml”
 * Make sure the Tomcat folder has read and write privileges.
 
 #### If server dont start
-* Set an environment variable CATALINA_HOME, that contains the pathname to the directory in which Tomcat has been installed.
-* Set an environment variable CLASSPATH, that contains the pathname to jsp-api.jar, located in the tomcat/lib.
+* Make sure the environment variable CATALINA_HOME exists, that contains the pathname to the directory in which Tomcat has been installed.
+* Make sure the environment variable CLASSPATH exists, that contains the pathname to jsp-api.jar, located in the tomcat/lib.
 
-```diff
-- Important remark
-```
-The “TestWebpage” that was created to interact with this API, can’t do the requests if the Tomcat (with apitest) is used on the same computer (the same-origin policy). To test the API, the Postman Chrome App can be used. 
+### Important remark
+
+The “TestWebpage” that was created to interact with this API, can’t do the requests if Tomcat (with apitest) is used on the same computer (the same-origin policy). To test the API, the Postman Chrome App can be used. 
 
 https://www.getpostman.com/docs/introduction
 
 ### In Eclipse:
-Import the “apitest.war” file.  Deploy the API to an installed local server.
+Import the “apitest.war” file. Deploy the API to an installed local server.
 
-Interaction with the API
+## Interaction with the API
 The webpage in the repositories WebPageTest, can be used to interact with this API.
 
-There are options (buttons) on the main page, to bypass login either as “user” or “admin”. In that case test route information is defined from file.
+If same-origin policy, there are options (buttons) on the main page, to bypass login either as “user” or “admin”. In that case test route information is defined from file.
 
-If the same-origin policy is NOT an issue, make sure to set the correct path (rootURL) in “settings.js” if the “TestWebpage” is used.
+If the same-origin policy is NOT an issue, make sure to set the correct path (rootURL) in “settings.js” (the pathname to the directory in which testapi is placed).
 
 
 ## Methods
