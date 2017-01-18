@@ -1,12 +1,13 @@
 ## Information
-This is a test project that involves creating an API that handles hiking trails.
+This is a test project that involves creating an Restful API that handles hiking trails.
 
-The API is based on RESTFul using the Jersey framework.
+The API is based on:
+* jersey 1.19.1 (JAX-RS 1.9.2)
 
 A simple database is used for test purposes which limits the number of users. 
 The database is not thread safe. 
 
-When the server is initiated, user information is included in the database.
+When the server is initiated, user information is included in the database from:
 * RouteService.java (route test data)
 * UserService.java (user test data)
 
@@ -16,6 +17,41 @@ Below are the preset user information.
 |---|---|---|---|
 |1| admin	| admin | admin |
 |2| user	| user | user |
+
+## Prerequisites
+* IDE (Eclipse 4.6)
+* JDK 1.8
+
+## Install and run the project
+I included a apitest.war file, that includes the Jersey library (JAX-RS). This can be deployed on any Java EE web container.
+
+### On local Tomcat server
+1. Add the apitest.war file to the “tomcat/webapps” folder. 
+2. Make sure the Tomcat folder has read and write privileges.
+3. Set an environment variable CATALINA_HOME, that contains the pathname to the directory in which Tomcat has been installed.
+3. Set an environment variable CLASSPATH, that contains the pathname to jsp-api.jar, located in the tomcat/lib.
+4. Start server by running startup.bat, located in tomcat/bin.
+
+When the server starts, the correct folders are created under “tomcat/webapps/apitest”. If no deployment are initiated you can log onto the server http://localhost:8080 and deploy manually.  Check for username and password in “Tomcat\conf\tomcat-users.xml”
+
+If the server is local, the API can be reached by “http://localhost:8080/TestApi/”
+Please check the “Connector port =8080” in “Tomcat\conf\server.xml”.
+
+#### Important remark
+The “TestWebpage” that was created to interact with this API, can’t do the requests if the Tomcat (with apitest) is used on the same computer (the same-origin policy). To test the API, the Postman Chrome App can be used. 
+
+https://www.getpostman.com/docs/introduction
+
+### In Eclipse:
+Import the “apitest.war” file.  Deploy the API to an installed local server.
+
+Interaction with the API
+The webpage in the repositories WebPageTest, can be used to interact with this API.
+
+There are options (buttons) on the main page, to bypass login either as “user” or “admin”. In that case test route information is defined from file.
+
+If the same-origin policy is NOT an issue, make sure to set the correct path (rootURL) in “settings.js” if the “TestWebpage” is used.
+
 
 ## Methods
 |Method  (route)| 	URL: 	|					Action:	|
