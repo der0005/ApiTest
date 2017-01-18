@@ -42,7 +42,7 @@ When the server starts, the folders are created under “tomcat/webapps/apitest�
 
 ### Important remark
 
-The “TestWebpage” that was created to interact with this API, can’t do the requests if Tomcat (with apitest) is used on the same computer (the same-origin policy). To test the API, the Postman Chrome App can be used. 
+The “TestWebpage” that was created to interact with this API, can’t do requests if Tomcat (with apitest) is used on the same computer (the same-origin policy). To test the API, the Postman Chrome App can be used. 
 
 https://www.getpostman.com/docs/introduction
 
