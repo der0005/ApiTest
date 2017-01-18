@@ -21,23 +21,28 @@ Below are the preset user information.
 ## Prerequisites
 * IDE (Eclipse 4.6)
 * JDK 1.8
+* Tomcat 8.5
 
 ## Install and run the project
 I included a apitest.war file, that includes the Jersey library (JAX-RS). This can be deployed on any Java EE web container.
 
 ### On local Tomcat server
 1. Add the apitest.war file to the “tomcat/webapps” folder. 
-2. Make sure the Tomcat folder has read and write privileges.
-3. Set an environment variable CATALINA_HOME, that contains the pathname to the directory in which Tomcat has been installed.
-3. Set an environment variable CLASSPATH, that contains the pathname to jsp-api.jar, located in the tomcat/lib.
-4. Start server by running startup.bat, located in tomcat/bin.
+2. Start server by running startup.bat, located in tomcat/bin.
 
-When the server starts, the correct folders are created under “tomcat/webapps/apitest”. If no deployment are initiated you can log onto the server http://localhost:8080 and deploy manually.  Check for username and password in “Tomcat\conf\tomcat-users.xml”
+When the server starts, the correct folders are created under “tomcat/webapps/apitest”. If the server is local, the API can be reached by “http://localhost:8080/TestApi/”. Please check the “Connector port =8080” in “Tomcat\conf\server.xml”.
 
-If the server is local, the API can be reached by “http://localhost:8080/TestApi/”
-Please check the “Connector port =8080” in “Tomcat\conf\server.xml”.
+#### If no deployment are initiated.
+* Log onto the server http://localhost:8080 and deploy manually. Check for username and password in “Tomcat\conf\tomcat-users.xml”
+* Make sure the Tomcat folder has read and write privileges.
 
-#### Important remark
+#### If server dont start
+* Set an environment variable CATALINA_HOME, that contains the pathname to the directory in which Tomcat has been installed.
+* Set an environment variable CLASSPATH, that contains the pathname to jsp-api.jar, located in the tomcat/lib.
+
+```diff
+- Important remark
+```
 The “TestWebpage” that was created to interact with this API, can’t do the requests if the Tomcat (with apitest) is used on the same computer (the same-origin policy). To test the API, the Postman Chrome App can be used. 
 
 https://www.getpostman.com/docs/introduction
