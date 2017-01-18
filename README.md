@@ -7,7 +7,7 @@ The API is based on:
 A simple database is used for test purposes which limits the number of users. 
 The database is not thread safe. 
 
-When the server is initiated, user information is included in the database from:
+When the server is initiated, information is included in the database from:
 * RouteService.java (route test data)
 * UserService.java (user test data)
 
